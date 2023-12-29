@@ -1,0 +1,30 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1>QR Code Generator</h1>
+    
+    <!-- custom_template.html -->
+<form method="post">
+    {% csrf_token %}
+    <label for="id_custom_field">Custom Field:</label>
+    <input type="text" id="id_custom_field" name="custom_field">
+    <!-- Add other fields as needed -->
+    
+    <button type="submit">Submit</button>
+</form>
+<img src="{% static 'img/qrcode.png' %}" width="200" height="200" alt="Description of the image">
+    <div id="qrcode"></div>
+  </div>
+
+ 
+</body>
+</html>
+
